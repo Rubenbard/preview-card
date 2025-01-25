@@ -1,34 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Blog preview card</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    <meta charset="UTF-8">
+    <title>Blog Preview Card</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  Learning
-
-  Published 21 Dec 2023
-
-  HTML & CSS foundations
-
-  These languages are the backbone of every website, defining structure, content, and presentation.
-
-  Greg Hooper
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <div class="blog-card">
+        <img src="blog-image.jpg" alt="Blog Post Image" class="blog-image">
+        <div class="card-content">
+            <button class="category-btn">Technology</button>
+            <h1 class="blog-title">Mastering CSS Techniques</h1>
+            <p class="blog-excerpt">
+                Explore advanced CSS techniques that can transform
+                your web design and create stunning, responsive layouts.
+            </p>
+            <div class="author-section">
+                <img src="author-avatar.jpg" alt="Author" class="author-image">
+                <span class="author-name">John Doe</span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
