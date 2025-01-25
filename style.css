@@ -1,9 +1,118 @@
 
 /* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/*css reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  font-size: 62.5%; /*1em is now 10px */
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+:root {
+  --grey-950: #111;
+  --grey-500: #6B6B6B;
+  --yellow: #F4D04E;
+  --white: #ffffff;
+
+  /* Typography */
+  --font-h1: 2.4rem;
+  --lh-h1: 1.5;
+  --ls-h1: 0;
+
+  --font-p: 1.6rem;
+  --lh-p: 1.5;
+  --ls-p: 0;
+
+  --font-p-small: 1.4rem;
+  --lh-p-small: 1.4;
+  --ls-p-small: 0;
 }
 
 body {
@@ -11,18 +120,19 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    font-family: "Figtree";
+    background-color: var(--yellow);
 }
 
 /* Blog Card Styles */
 .blog-card {
-    width: 300px;
-    height: 454px;
+    width: 384px;
+    height: 51.3rem;
     background-color: white;
+    border: var(--grey-950) 1px solid;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    box-shadow: 8px 8px var(--grey-950);
+        overflow: hidden;
     transition: transform 0.3s ease;
 }
 
@@ -32,9 +142,12 @@ body {
 
 /* Blog Image */
 .blog-image {
-    width: 100%;
-    height: 200px;
+width: 100%;    
+height: 20rem;
     object-fit: cover;
+    padding: 2.4rem;
+  padding-bottom: 0;
+  border-radius: 1rem;
 }
 
 /* Card Content */
@@ -42,18 +155,19 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: left;
+    text-align: left;
 }
 
 /* Category Button */
 .category-btn {
-    background-color: yellow;
+    background-color: var(--yellow);
     border: none;
     padding: 8px 15px;
-    border-radius: 20px;
+    border-radius: 5px;
     font-weight: bold;
-    margin-bottom: 15px;
+    width: 8.2rem;
+    margin-bottom: 1.6rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -62,20 +176,32 @@ body {
     background-color: #ffeb3b;
 }
 
+/*blog subtitle */
+.blog-subtitle{
+font-size: var(--font-p-small);
+line-height: var(--lh-p-small);
+font-weight: 300;
+margin-bottom: 1.6rem;
+}
+
 /* Blog Title */
 .blog-title {
-    font-size: 1.4rem;
+    font-size: var(--font-h1);
     margin-bottom: 15px;
-    color: #333;
+    color: var(--grey-950);
+    line-height: var(--lh-h1);
 }
 
 /* Blog Excerpt */
 .blog-excerpt {
     color: #666;
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: var(--font-p-small);
+    line-height: var(--lh-p-small);
+    letter-spacing: var(--ls-p-small);
+    font-weight: 800;
+    font;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
 }
 
 /* Author Section */
@@ -93,8 +219,8 @@ body {
 }
 
 .author-name {
-    font-weight: bold;
-    color: #444;
+    font-weight: 500;
+    color: var(--grey-950);
 }
 
 /* Responsive Adjustments */
